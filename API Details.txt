@@ -1,0 +1,82 @@
+curl -X GET --header 'Accept: application/json' 'http://localhost:8080/enrollees'
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '[{ \ 
+     "name": "Test 10", \ 
+     "dateOfBirth": "2-26-2000", \ 
+     "active": true \ 
+   }]' 'http://localhost:8080/enrollees'
+   
+curl -X GET --header 'Accept: application/json' 'http://localhost:8080/enrollees/JgTwzxxZQX-gZZu6ycCqrg'
+
+
+curl -X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' -d ' { \ 
+     "name": "Test 11", \ 
+     "dateOfBirth": "2-26-2000", \ 
+     "active": true \ 
+   }' 'http://localhost:8080/enrollees/JgTwzxxZQX-gZZu6ycCqrg'
+
+=============================================================   
+   
+Get : 
+URL : http://localhost:8080/enrollees
+Response : 
+[
+  {
+    "active": false,
+    "dateOfBirth": "string",
+    "id": "string",
+    "name": "string"
+  }
+]
+
+=============================================================   
+
+Get by ID 
+URL : 'http://localhost:8080/enrollees/JgTwzxxZQX-gZZu6ycCqrg'
+Response : 
+{
+  "id": "JgTwzxxZQX-gZZu6ycCqrg",
+  "name": "Test 10",
+  "dateOfBirth": "2-26-2000",
+  "active": true
+}
+
+=============================================================   
+
+POST : 
+URL : http://localhost:8080/enrollees
+Request : 
+[{
+    "name": "Test 10",
+    "dateOfBirth": "2-26-2000",
+    "active": true
+  }]
+  
+Response : 
+[
+  {
+    "id": "JgTwzxxZQX-gZZu6ycCqrg",
+    "name": "Test 10",
+    "dateOfBirth": "2-26-2000",
+    "active": true
+  }
+]
+
+=============================================================   
+
+PUT : 
+URL : http://localhost:8080/enrollees/JgTwzxxZQX-gZZu6ycCqrg
+Request : 
+{
+	"name": "Test 11",
+	"dateOfBirth": "2-26-2000",
+	"active": true
+}
+Response : 
+{
+	"id": "JgTwzxxZQX-gZZu6ycCqrg",
+	"name": "Test 11",
+	"dateOfBirth": "2-26-2000",
+	"active": true
+}
+=============================================================   
